@@ -10,7 +10,6 @@ void Render();
 void Reshape(int w, int h);
 void SetupViewTransform();
 void SetupViewVolume();
-void DrawCircle(double radius, double r, double g, double b);
 void DrawBox();
 void DrawWall();
 void KeyboardFunc(unsigned char key, int x, int y);
@@ -101,19 +100,7 @@ void Render()
 	glPopMatrix();
 	glutSwapBuffers();
 }
-void DrawCircle(double radius, double r, double g, double b)
-{
-	glColor3f(r, g, b);
-	glBegin(GL_LINE_LOOP);
-	for (int i = 0; i < 100; i++)
-	{
-		double theta = PI*2.0*i / 100;
-		double x = radius*cos(theta);
-		double y = radius*sin(theta);
-		glVertex3f(x, y, 0);
-	}
-	glEnd();
-}
+
 void DrawBox() {
 	glColor3f(0.5f, 1.0f, 0.5f);
 	glBegin(GL_LINE_LOOP);
